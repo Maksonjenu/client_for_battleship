@@ -1,0 +1,15 @@
+Z:\worktable\CLientus_minecraftus\battlestit\battlestit\obj\Debug\battlestit.csprojAssemblyReference.cache
+Z:\worktable\CLientus_minecraftus\battlestit\battlestit\obj\Debug\MainWindow.g.cs
+Z:\worktable\CLientus_minecraftus\battlestit\battlestit\obj\Debug\App.g.cs
+Z:\worktable\CLientus_minecraftus\battlestit\battlestit\obj\Debug\battlestit_MarkupCompile.cache
+Z:\worktable\CLientus_minecraftus\battlestit\battlestit\obj\Debug\battlestit_MarkupCompile.lref
+Z:\worktable\CLientus_minecraftus\battlestit\battlestit\bin\Debug\battlestit.exe.config
+Z:\worktable\CLientus_minecraftus\battlestit\battlestit\bin\Debug\battlestit.exe
+Z:\worktable\CLientus_minecraftus\battlestit\battlestit\bin\Debug\battlestit.pdb
+Z:\worktable\CLientus_minecraftus\battlestit\battlestit\obj\Debug\MainWindow.baml
+Z:\worktable\CLientus_minecraftus\battlestit\battlestit\obj\Debug\battlestit.g.resources
+Z:\worktable\CLientus_minecraftus\battlestit\battlestit\obj\Debug\battlestit.Properties.Resources.resources
+Z:\worktable\CLientus_minecraftus\battlestit\battlestit\obj\Debug\battlestit.csproj.GenerateResource.cache
+Z:\worktable\CLientus_minecraftus\battlestit\battlestit\obj\Debug\battlestit.csproj.CoreCompileInputs.cache
+Z:\worktable\CLientus_minecraftus\battlestit\battlestit\obj\Debug\battlestit.exe
+Z:\worktable\CLientus_minecraftus\battlestit\battlestit\obj\Debug\battlestit.pdb

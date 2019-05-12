@@ -1,0 +1,18 @@
+﻿<Window x:Class="battlestit.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:battlestit"
+        mc:Ignorable="d"
+        Title="ne ADMINKA SERVERA MUNICRAFT 1.2.5 8 800 555 35 35 CHLEN" Height="567.913" Width="1049.261" Closing="Window_Closing">
+   
+    <Grid>
+        <UniformGrid Name="ugr" Width="400" Height="400" Margin="45,0,0,82" VerticalAlignment="Bottom" HorizontalAlignment="Left" RenderTransformOrigin="0.5,0.5">
+           
+        </UniformGrid>
+        <UniformGrid Name="ugr1" Width="400" Height="400" Margin="589,0,0,82" VerticalAlignment="Bottom" HorizontalAlignment="Left" RenderTransformOrigin="0.5,0.5">
+           
+        </UniformGrid>
+    </Grid>
+</Window>
