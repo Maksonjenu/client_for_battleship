@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Net.Sockets;
 using System.Text;
 using System.Threading;
@@ -22,6 +23,13 @@ namespace battlestit
     /// </summary>
     public partial class MainWindow : Window
     {
+        
+
+       
+
+
+        int n = 0;
+
         public string message;
         const int port = 25565;
         const string address = "127.0.0.1";
@@ -32,23 +40,23 @@ namespace battlestit
         public void Btn_Click(object sender, RoutedEventArgs e)
         {
 
-            
+            //userName = "p1";
             //получение значения лежащего в Tag
-            int n = (int)((Button)sender).Tag;
+             n = (int)((Button)sender).Tag;
             //установка фона нажатой кнопки, цвета и размера шрифта
             ((Button)sender).Background = Brushes.Red;
             ((Button)sender).Foreground = Brushes.Black;
             ((Button)sender).FontSize = 8;
             //запись в нажатую кнопку её номера
             ((Button)sender).Content = n.ToString();
-          //  Thread myThread1 = new Thread(new ThreadStart(Count1));  тред на получение данных 
-          //  myThread1.Start();
-            client = new TcpClient(address, port);
+            //  Thread myThread1 = new Thread(new ThreadStart(Count1));  тред на получение данных 
+            //  myThread1.Start();
+           client = new TcpClient(address, port);
             //получение потока для обмена сообщениями
             stream = client.GetStream();
 
-         //   myThread1 = new Thread(new ThreadStart(Count1));
-          //  myThread1.Start();
+              myThread1 = new Thread(new ThreadStart(Count1));
+              myThread1.Start();
 
 
             message = n.ToString();
@@ -66,8 +74,7 @@ namespace battlestit
            
             ugr.Rows = 10;
             ugr.Columns = 10;
-
-
+           
             //указываются размеры сетки (число ячеек * (размер кнопки в ячейки + толщина её границ))
             // ugr.Width = 10 * (40 + 4);
             // ugr.Height = 10 * (40 + 4);
@@ -119,6 +126,32 @@ namespace battlestit
 
             }
         }
+        //private void ReceiveMessages()
+        //{
+        //    alive = true;
+        //    try
+        //    {
+        //        while (alive)
+        //        {
+        //            IPEndPoint remoteIp = null;
+        //            byte[] data = client.Receive(ref remoteIp);
+        //            string message = Encoding.Unicode.GetString(data);
+
+        //            // добавляем полученное сообщение в текстовое поле
+
+        //        }
+        //    }
+        //    catch (ObjectDisposedException)
+        //    {
+        //        if (!alive)
+        //            return;
+        //        throw;
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        MessageBox.Show(ex.Message);
+        //    }
+        //}
         private void Count1()
         {
 
@@ -146,7 +179,7 @@ namespace battlestit
 
             catch (Exception ex)
             {
-               stream.Close();
+                stream.Close();
             }
             finally
             {
@@ -155,6 +188,7 @@ namespace battlestit
             }
 
         }
+
 
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
