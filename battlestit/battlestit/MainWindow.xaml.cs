@@ -80,12 +80,12 @@ namespace battlestit
             // ugr.Height = 10 * (40 + 4);
             //толщина границ сетки
             // ugr.Margin = new Thickness(-456, 10, 458, -2);
-            for (int i = 0; i < 100; i++)
+            for (int i = 1; i < 101; i++)
             {
                 //создание кнопки
                 Button btn = new Button();
                 //запись номера кнопки
-                btn.Tag = i + 1;
+                btn.Tag = i;
                 //установка размеров кнопки
                 btn.Width = 40;
                 btn.Height = 40;
@@ -106,12 +106,12 @@ namespace battlestit
             // ugr1.Height = 10 * (40 + 4);
             //толщина границ сетки
             //  ugr1.Margin = new Thickness(2, 2, 2, 2);
-            for (int i = 0; i < 100; i++)
+            for (int i = 1; i < 101; i++)
             {
                 //создание кнопки
                 Button btn1 = new Button();
                 //запись номера кнопки
-                btn1.Tag = i + 1;
+                btn1.Tag = i ;
                 //установка размеров кнопки
                 btn1.Width = 40;
                 btn1.Height = 40;
