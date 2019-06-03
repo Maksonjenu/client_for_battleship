@@ -1,4 +1,3 @@
-Z:\worktable\CLientus_minecraftus\battlestit\battlestit\obj\Debug\battlestit.csprojAssemblyReference.cache
 Z:\worktable\CLientus_minecraftus\battlestit\battlestit\obj\Debug\MainWindow.g.cs
 Z:\worktable\CLientus_minecraftus\battlestit\battlestit\obj\Debug\App.g.cs
 Z:\worktable\CLientus_minecraftus\battlestit\battlestit\obj\Debug\battlestit_MarkupCompile.cache
@@ -13,3 +12,4 @@ Z:\worktable\CLientus_minecraftus\battlestit\battlestit\obj\Debug\battlestit.csp
 Z:\worktable\CLientus_minecraftus\battlestit\battlestit\obj\Debug\battlestit.csproj.CoreCompileInputs.cache
 Z:\worktable\CLientus_minecraftus\battlestit\battlestit\obj\Debug\battlestit.exe
 Z:\worktable\CLientus_minecraftus\battlestit\battlestit\obj\Debug\battlestit.pdb
+Z:\worktable\CLientus_minecraftus\battlestit\battlestit\obj\Debug\battlestit.csprojAssemblyReference.cache

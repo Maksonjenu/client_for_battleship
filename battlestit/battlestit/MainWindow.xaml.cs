@@ -39,7 +39,7 @@ namespace battlestit
         Thread myThread1;
         public void Btn_Click(object sender, RoutedEventArgs e)
         {
-
+            
             //userName = "p1";
             //получение значения лежащего в Tag
              n = (int)((Button)sender).Tag;
@@ -50,13 +50,13 @@ namespace battlestit
             //запись в нажатую кнопку её номера
             ((Button)sender).Content = n.ToString();
             //  Thread myThread1 = new Thread(new ThreadStart(Count1));  тред на получение данных 
-            //  myThread1.Start();
-           client = new TcpClient(address, port);
-            //получение потока для обмена сообщениями
-            stream = client.GetStream();
+           // //  myThread1.Start();
+           //client = new TcpClient(address, port);
+           // //получение потока для обмена сообщениями
+           // stream = client.GetStream();
 
-              myThread1 = new Thread(new ThreadStart(Count1));
-              myThread1.Start();
+              //myThread1 = new Thread(new ThreadStart(Count1));
+              //myThread1.Start();
 
 
             message = n.ToString();
@@ -128,7 +128,7 @@ namespace battlestit
         }
         //private void ReceiveMessages()
         //{
-        //    alive = true;
+        //    bool alive = true;
         //    try
         //    {
         //        while (alive)
@@ -163,6 +163,7 @@ namespace battlestit
                     byte[] data = new byte[64];
                     StringBuilder builder = new StringBuilder();
                     int bytes = 0;
+
                     //до тех пор пока есть данные в потоке
                     do
                     {
@@ -173,6 +174,10 @@ namespace battlestit
                     }
                     while (stream.DataAvailable);
                     message = builder.ToString();
+
+                    var o = ugr.Children[(int.Parse)(message) - 1];
+                    Btn_Click((Button)o, null);
+
                     //stream.Close();
                 }
             }
@@ -192,12 +197,12 @@ namespace battlestit
 
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
-            message = "fkthisshtimout";
+           // message = "fkthisshtimout";
 
             //преобразование сообщение в массив байтов
-            byte[] data = Encoding.Unicode.GetBytes(message);
+           // byte[] data = Encoding.Unicode.GetBytes(message);
             //отправка сообщения
-            stream.Write(data, 0, data.Length);
+          //  stream.Write(data, 0, data.Length);
 
 
 
@@ -205,6 +210,16 @@ namespace battlestit
                 client.Close();
             if (stream != null)
                 stream.Close();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            client = new TcpClient(address, port);
+            //получение потока для обмена сообщениями
+            stream = client.GetStream();
+
+            myThread1 = new Thread(new ThreadStart(Count1));
+            myThread1.Start();
         }
     }
 }
