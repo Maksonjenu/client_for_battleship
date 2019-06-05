@@ -23,10 +23,10 @@ namespace battlestit
     /// </summary>
     public partial class MainWindow : Window
     {
+
+
         
-
-       
-
+        
 
         int n = 0;
 
@@ -37,18 +37,20 @@ namespace battlestit
         TcpClient client = null;
         NetworkStream stream;
         Thread myThread1;
-        public void Btn_Click(object sender, RoutedEventArgs e)
+        public void UGR_Btn_Click(object sender, RoutedEventArgs e)
         {
             
+            for (int i = 0; i < 100; i++)
+                ((Button)(ugr.Children[i])).Background = Brushes.Blue;
             //userName = "p1";
             //получение значения лежащего в Tag
-             n = (int)((Button)sender).Tag;
+             tagofcell.Text = (((Button)sender).Tag).ToString();
             //установка фона нажатой кнопки, цвета и размера шрифта
             ((Button)sender).Background = Brushes.Red;
-            ((Button)sender).Foreground = Brushes.Black;
-            ((Button)sender).FontSize = 8;
+            ((Button)sender).Foreground = Brushes.White;
+            ((Button)sender).FontSize = 9;
             //запись в нажатую кнопку её номера
-            ((Button)sender).Content = n.ToString();
+          //  ((Button)sender).Content = n.ToString();
             //  Thread myThread1 = new Thread(new ThreadStart(Count1));  тред на получение данных 
            // //  myThread1.Start();
            //client = new TcpClient(address, port);
@@ -58,72 +60,114 @@ namespace battlestit
               //myThread1 = new Thread(new ThreadStart(Count1));
               //myThread1.Start();
 
+            message = (((Button)sender).Tag).ToString();
 
-            message = n.ToString();
 
-            //преобразование сообщение в массив байтов
-            byte[] data = Encoding.Unicode.GetBytes(message);
-            //отправка сообщения
-            stream.Write(data, 0, data.Length);
+
+
 
         }
+
+        public void kostil(string message)
+        {
+            var o = ugr.Children[(int.Parse)(message) - 1];
+            UGR1_Btn_Click((Button)o, null);
+        }
+
+
+        public void UGR1_Btn_Click(object sender, RoutedEventArgs e)
+        {
+
+          
+            n = (int)((Button)sender).Tag;
+            ((Button)sender).Background = Brushes.Red;
+            ((Button)sender).Foreground = Brushes.White;
+            ((Button)sender).FontSize = 9;
+            ((Button)sender).Content = n.ToString();
+            //  Thread myThread1 = new Thread(new ThreadStart(Count1));  тред на получение данных 
+            // //  myThread1.Start();
+            //client = new TcpClient(address, port);
+            // //получение потока для обмена сообщениями
+            // stream = client.GetStream();
+
+            //myThread1 = new Thread(new ThreadStart(Count1));
+            //myThread1.Start();
+        }
+
 
         public MainWindow()
         {
             InitializeComponent();
-           
-            ugr.Rows = 10;
-            ugr.Columns = 10;
-           
-            //указываются размеры сетки (число ячеек * (размер кнопки в ячейки + толщина её границ))
-            // ugr.Width = 10 * (40 + 4);
-            // ugr.Height = 10 * (40 + 4);
-            //толщина границ сетки
-            // ugr.Margin = new Thickness(-456, 10, 458, -2);
-            for (int i = 1; i < 101; i++)
-            {
-                //создание кнопки
-                Button btn = new Button();
-                //запись номера кнопки
-                btn.Tag = i;
-                //установка размеров кнопки
-                btn.Width = 40;
-                btn.Height = 40;
-                //текст на кнопке
-                btn.Content = i;
-                //толщина границ кнопки
-                btn.Margin = new Thickness(1);
-                //при нажатии кнопки, будет вызываться метод Btn_Click
-                btn.Click += Btn_Click;
-                //добавление кнопки в сетку
-                ugr.Children.Add(btn);
 
+
+            string namese = Microsoft.VisualBasic.Interaction.InputBox("ur name is:");
+
+
+            //////////////////////////////////
+            //////создание левого поля////////
+            //////////////////////////////////
+            {
+
+                ugr.Rows = 10;
+                ugr.Columns = 10;
+
+                //указываются размеры сетки (число ячеек * (размер кнопки в ячейки + толщина её границ))
+                // ugr.Width = 10 * (40 + 4);
+                // ugr.Height = 10 * (40 + 4);
+                //толщина границ сетки
+                // ugr.Margin = new Thickness(-456, 10, 458, -2);
+                for (int i = 1; i < 101; i++)
+                {
+                    //создание кнопки
+                    Button btn = new Button();
+                    //запись номера кнопки
+                    btn.Tag = i;
+                    //установка размеров кнопки
+                    btn.Width = 40;
+                    btn.Height = 40;
+                    //текст на кнопке
+                    btn.Content = i;
+                    //толщина границ кнопки
+                    btn.Margin = new Thickness(1);
+                    //при нажатии кнопки, будет вызываться метод Btn_Click
+                    btn.Click += UGR_Btn_Click;
+                    //добавление кнопки в сетку
+                    ugr.Children.Add(btn);
+
+                }
             }
-            ugr1.Rows = 10;
-            ugr1.Columns = 10;
-            //указываются размеры сетки (число ячеек * (размер кнопки в ячейки + толщина её границ))
-            // ugr1.Width = 10 * (40 + 4);
-            // ugr1.Height = 10 * (40 + 4);
-            //толщина границ сетки
-            //  ugr1.Margin = new Thickness(2, 2, 2, 2);
-            for (int i = 1; i < 101; i++)
-            {
-                //создание кнопки
-                Button btn1 = new Button();
-                //запись номера кнопки
-                btn1.Tag = i ;
-                //установка размеров кнопки
-                btn1.Width = 40;
-                btn1.Height = 40;
-                //текст на кнопке
-                btn1.Content = i;
-                //толщина границ кнопки
-                btn1.Margin = new Thickness(1);
-                //при нажатии кнопки, будет вызываться метод Btn_Click
-                btn1.Click += Btn_Click;
-                //добавление кнопки в сетку
-                ugr1.Children.Add(btn1);
 
+            //////////////////////////////////
+            //////создание правого поля///////
+            //////////////////////////////////
+
+            {
+                ugr1.Rows = 10;
+                ugr1.Columns = 10;
+                //указываются размеры сетки (число ячеек * (размер кнопки в ячейки + толщина её границ))
+                // ugr1.Width = 10 * (40 + 4);
+                // ugr1.Height = 10 * (40 + 4);
+                //толщина границ сетки
+                //  ugr1.Margin = new Thickness(2, 2, 2, 2);
+                for (int i = 1; i < 101; i++)
+                {
+                    //создание кнопки
+                    Button btn1 = new Button();
+                    //запись номера кнопки
+                    btn1.Tag = i;
+                    //установка размеров кнопки
+                    btn1.Width = 40;
+                    btn1.Height = 40;
+                    //текст на кнопке
+                    btn1.Content = i;
+                    //толщина границ кнопки
+                    btn1.Margin = new Thickness(1);
+                    //при нажатии кнопки, будет вызываться метод Btn_Click
+                    btn1.Click += UGR1_Btn_Click;
+                    //добавление кнопки в сетку
+                    ugr1.Children.Add(btn1);
+
+                }
             }
         }
         //private void ReceiveMessages()
@@ -175,8 +219,16 @@ namespace battlestit
                     while (stream.DataAvailable);
                     message = builder.ToString();
 
-                    var o = ugr.Children[(int.Parse)(message) - 1];
-                    Btn_Click((Button)o, null);
+
+                    /* ~~~ тут начинается кусок говна которые мотает мне нервы третий день ~~~ */            ////
+                 //   UIElement o;                                                                             ////
+                 //   Dispatcher.BeginInvoke(new Action(() => o = ugr.Children[(int.Parse)(message) - 1]));    ////
+                                                                                                             ////
+                 //   o = ugr.Children[(int.Parse)(message) - 1];
+
+                 //   Dispatcher.BeginInvoke(new Action(() => UGR1_Btn_Click((Button)o, null)));
+
+                    /* ~~~ а тут кончается кусок говна которые мотает мне нервы третий день ~~~ */
 
                     //stream.Close();
                 }
@@ -184,12 +236,13 @@ namespace battlestit
 
             catch (Exception ex)
             {
+                MessageBox.Show(ex.Message);
                 stream.Close();
             }
             finally
             {
 
-                client.Close();
+               // client.Close();
             }
 
         }
@@ -214,12 +267,34 @@ namespace battlestit
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            client = new TcpClient(address, port);
-            //получение потока для обмена сообщениями
-            stream = client.GetStream();
 
-            myThread1 = new Thread(new ThreadStart(Count1));
-            myThread1.Start();
+            try
+            {
+                client = new TcpClient(address, port);
+                //получение потока для обмена сообщениями
+                stream = client.GetStream();
+
+                myThread1 = new Thread(new ThreadStart(Count1));
+                myThread1.Start();
+                makemake.Content = "наверное ок";
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("Сервер нон стартед");
+            }
+        }
+
+        private void Make_shot_button_Click(object sender, RoutedEventArgs e)
+        {
+
+
+            
+            
+            //преобразование сообщение в массив байтов
+            byte[] data = Encoding.Unicode.GetBytes(message);
+            //отправка сообщения
+            stream.Write(data, 0, data.Length);
+           
         }
     }
 }

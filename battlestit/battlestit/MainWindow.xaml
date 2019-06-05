@@ -6,14 +6,17 @@
         xmlns:local="clr-namespace:battlestit"
         mc:Ignorable="d"
         Title="ne ADMINKA SERVERA MUNICRAFT 1.2.5 8 800 555 35 35 CHLEN" Height="567.913" Width="1049.261" Closing="Window_Closing">
-   
+
     <Grid>
-        <UniformGrid Name="ugr" Width="400" Height="400" Margin="45,0,0,82" VerticalAlignment="Bottom" HorizontalAlignment="Left" RenderTransformOrigin="0.5,0.5">
-           
+        <UniformGrid Name="ugr" Width="400" Height="400" Margin="10,0,0,127" VerticalAlignment="Bottom" HorizontalAlignment="Left" RenderTransformOrigin="0.5,0.5">
+
         </UniformGrid>
-        <UniformGrid Name="ugr1" Width="400" Height="400" Margin="589,0,0,82" VerticalAlignment="Bottom" HorizontalAlignment="Left" RenderTransformOrigin="0.5,0.5">
-           
+        <UniformGrid Name="ugr1" Width="400" Height="400" Margin="437,0,0,127" VerticalAlignment="Bottom" HorizontalAlignment="Left" RenderTransformOrigin="0.5,0.5">
+
         </UniformGrid>
-        <Button Content="Button" HorizontalAlignment="Left" Margin="502,473,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click"/>
+        <Button x:Name="makemake" Content="Make connect" HorizontalAlignment="Left" Margin="842,10,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click"/>
+        <TextBox x:Name="tagofcell" HorizontalAlignment="Left" Height="23" Margin="976,35,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="55"/>
+        <Label Content="selected cell is" HorizontalAlignment="Left" Margin="842,35,0,0" VerticalAlignment="Top" Width="129"/>
+        <Button x:Name="make_shot_button" Content="make shot" HorizontalAlignment="Left" Margin="842,75,0,0" VerticalAlignment="Top" Width="75" Click="Make_shot_button_Click"/>
     </Grid>
 </Window>
